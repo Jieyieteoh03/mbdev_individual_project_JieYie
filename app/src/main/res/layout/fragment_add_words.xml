@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.individualproject.ui.viewModel.AddWordsViewModel" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        tools:context=".ui.fragment.AddWordsFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_new_word"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"/>
+        </LinearLayout>
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="19sp"/>
+        
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bg"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="10dp"
+            android:hint="@string/title"
+            android:text="@={viewModel.title}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/meaning"
+            android:textSize="19sp"
+            android:layout_marginTop="20dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bg"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="10dp"
+            android:hint="@string/meaning"
+            android:text="@={viewModel.meaning}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/synonyms"
+            android:textSize="19sp"
+            android:layout_marginTop="20dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bg"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="10dp"
+            android:hint="@string/synonyms"
+            android:text="@={viewModel.synonyms}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/details_title"
+            android:textSize="19sp"
+            android:layout_marginTop="20dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_bg"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="10dp"
+            android:hint="@string/details"
+            android:text="@={viewModel.details}"/>
+        
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:textSize="20sp"
+            android:layout_marginTop="110dp"
+            android:paddingVertical="16dp"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/blue"
+            android:onClick="@{() -> viewModel.submit()}"/>
+        
+
+
+    </LinearLayout>
+</layout>

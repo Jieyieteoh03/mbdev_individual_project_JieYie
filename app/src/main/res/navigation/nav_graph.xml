@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.individualproject.ui.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_home_to_addWords"
+            app:destination="@id/addWordsFragment" />
+        <action
+            android:id="@+id/action_home_to_viewWord"
+            app:destination="@id/viewWordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWordsFragment"
+        android:name="com.example.individualproject.ui.fragment.AddWordsFragment"
+        android:label="AddWordsFragment" />
+    <fragment
+        android:id="@+id/updateWordsFragment"
+        android:name="com.example.individualproject.ui.fragment.UpdateWordsFragment"
+        android:label="fragment_update_words"
+        tools:layout="@layout/fragment_update_words" >
+        <argument android:name="id" app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/viewWordFragment"
+        android:name="com.example.individualproject.ui.fragment.ViewWordFragment"
+        android:label="ViewWordFragment" >
+        <action
+            android:id="@+id/action_viewWord_to_updateWords"
+            app:destination="@id/updateWordsFragment" />
+        <argument android:name="id" app:argType="integer"/>
+    </fragment>
+</navigation>
